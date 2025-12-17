@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh | Photography Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling --- */
+        :root {
+            --bg-color: #0A0A0A; /* Deep Black */
+            --text-color: #F0F0F0; /* Off-White */
+            --accent-color: #B8860B; /* Subtle Gold/Dark Yellow */
+            --font-family-primary: 'Montserrat', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-family-primary);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        /* --- Header & Navigation --- */
+        .site-header {
+            background-color: var(--bg-color);
+            padding: 20px 40px;
+            border-bottom: 1px solid #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-color);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-left: 30px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Hero Section/Main Title --- */
+        .hero-title {
+            padding: 100px 20px;
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+        
+        .hero-title span {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        /* --- Gallery Section --- */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin: 60px 0 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .gallery {
+            display: grid;
+            /* Adjust grid for a cleaner, modern look */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px; /* Reduced gap for density */
+            padding: 30px 50px; /* More padding on the sides */
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            /* Remove border and loud box-shadow */
+            border-radius: 0;
+            box-shadow: none; 
+            filter: brightness(0.9); /* Subtle dimming */
+            transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.02);
+            filter: brightness(1.0); /* Brighten on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Subtle, dark shadow */
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 1px solid #1a1a1a;
+            font-size: 0.9rem;
+            color: #555;
+        }
+/* --- Hero Section/Main Title --- */
+        .hero-title {
+            padding: 150px 20px; /* Increased padding for more space for the image */
+            margin: 0;
+            font-size: 4rem; /* Slightly larger font for impact */
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            
+            /* --- Background Image Styling --- */
+            background-image: url('images/water.png'); /* REPLACE 'images/hero-bg.jpg' with your actual image path */
+            background-size: cover; /* Ensures the image covers the entire container */
+            background-position: center; /* Centers the image */
+            background-attachment: fixed; /* (Optional) Creates a cool parallax scrolling effect */
+            
+            /* --- Text Readability Overlay --- */
+            color: var(--text-color); /* Ensure text is white/off-white */
+            position: relative;
+        }
+        
+        /* Optional: Add a dark semi-transparent overlay behind the text for better contrast */
+        .hero-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+           /* background-color: rgba(0, 0, 0, 0.4); /* 40% opaque black overlay */
+            z-index: 1; /* Place the overlay behind the text */
+        }
+
+        .hero-title span {
+            font-weight: 600;
+            color: var(--accent-color);
+            position: relative; /* Bring the text above the overlay */
+            z-index: 2;
+        }
+        
+        .hero-title {
+            position: relative; /* Ensure the text itself is above the ::before pseudo-element */
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+      <a href="">  <div class="logo">HARSH<span>.</span></div> </a>
+        <nav>
+            <a href="#landscape">Landscape</a>
+            <a href="#portrait">Portrait</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <h1 class="hero-title">Photographer <span>Portfolio</span></h1>
+
+    <h2 id="landscape" class="section-title">Landscape Photography</h2>
+    <div class="gallery">
+     <img src="images/beachref.png" alt="A beautiful scenery">
+       <a href="https://www.instagram.com/p/C2CKQ1wrDQg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img src="images/bmw.png" alt="Bmw"> </a> 
+        <img src="images/beach.png" alt="A beautiful scenery">
+        <img src="images/palshet.png" alt="Palshet village">
+        <img src="images/evening.png" alt="A beautiful evening scenery">
+        <img src="images/hawamahal.png" alt="A beautiful hawamahal">
+        <img src="images/cloud.png" alt="A beautiful cloudy scenery">
+         <img src="images/gaaav.png" alt="A beautiful cloudy scenery">
+        </div>
+
+    <h2 id="portrait" class="section-title">Portrait Photography</h2>
+    <div class="gallery">
+     <img src="images/reflection.png" alt="A beautiful cloudy scenery">
+       <img src="images/ganpatisky.png" alt="A beautiful cloudy scenery">
+       <img src="images/kabutr.png" alt="A beautiful cloudy scenery">
+       <img src="images/moon.png" alt="A beautiful cloudy scenery">
+         <img src="images/cst.png" alt="A beautiful cloudy scenery">
+       <img src="images/cloudss.png" alt="A beautiful cloudy scenery">
+            <img src="images/mumbai.png" alt="A beautiful cloudy scenery">
+             <img src="images/chruch.png" alt="A beautiful cloudy scenery">
+    </div>
+    
+    <footer id="contact">
+        <p>&copy; 2025 Harsh Photography. All Rights Reserved.</p>
+        <p>Contact: harsh.photos@email.com</p>
+    </footer>
+
+</body>
+</html>
