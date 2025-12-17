@@ -13,9 +13,9 @@ pipeline {
             steps {
                 s3Upload(
                     bucket: 'static-website-aaws',
-                    workingDir: '.',
+                    workingDir: '',
                     includePathPattern: '**/*',
-                    profileName: 's3-profile'
+                    profileName: 'jenkinsdeploy'
                 )
             }
         }
