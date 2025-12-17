@@ -2,20 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/harshgbirje-h4/s3-cloudfront-website.git'
             }
         }
 
-        stage('Deploy to S3') {
+        stage('Upload to S3') {
             steps {
                 s3Upload(
-                    bucket: 'static-website-aaws ',
-                    path: '',
+                    bucket: 'static-website-aaws',
                     workingDir: '.',
-                    includePathPattern: '**/*'
+                    includePathPattern: '**/*',
+                    profileName: 's3-profile'
                 )
             }
         }
