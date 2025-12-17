@@ -8,16 +8,16 @@ pipeline {
             }
         }
 
-        stage('Deploy to S3') {
+        stage('Upload to S3') {
             steps {
-                s3Upload(
-                    bucket: 'static-website-aaws',
-                    profileName: 'jenkinsdeploy',
-                    workingDir: '',
-                    includePathPattern: '**/*'
-                )
+                withAWS(credentials: 'aws-creds', region: 'ap-south-1') {
+                    s3Upload(
+                        bucket: 'static-website-aaws',
+                        path: '',
+                        workingDir: '.'
+                    )
+                }
             }
         }
     }
 }
-
