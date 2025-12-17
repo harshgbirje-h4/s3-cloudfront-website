@@ -4,20 +4,20 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/harshgbirje-h4/s3-cloudfront-website.git'
+                checkout scm
             }
         }
 
-        stage('Upload to S3') {
+        stage('Deploy to S3') {
             steps {
                 s3Upload(
                     bucket: 'static-website-aaws',
+                    profileName: 'jenkinsdeploy',
                     workingDir: '',
-                    includePathPattern: '**/*',
-                    profileName: 'jenkinsdeploy'
+                    includePathPattern: '**/*'
                 )
             }
         }
     }
 }
+
