@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/harshgbirje-h4/s3-cloudfront-website.git'
+                checkout scm
             }
         }
 
@@ -13,8 +12,8 @@ pipeline {
             steps {
                 s3Upload(
                     bucket: 'static-website-aaws',
-                    path: '',
-                    file: '**/*'
+                    workingDir: '.',
+                    includePathPattern: '**/*'
                 )
             }
         }
